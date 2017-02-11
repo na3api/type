@@ -2,10 +2,8 @@
 /**
  * Created by nazar on 01.02.17.
  */
-var Realtime = (function () {
-    function Realtime() {
-    }
-    Realtime.prototype.callback = function (func, response, callback) {
+class Realtime {
+    callback(func, response, callback) {
         if (typeof response == 'string')
             response = this.parseJson(response);
         if (typeof func == 'function') {
@@ -32,9 +30,9 @@ var Realtime = (function () {
                 console.log(err);
             }
         }
-    };
+    }
     ;
-    Realtime.prototype.parseJson = function (json) {
+    parseJson(json) {
         try {
             return JSON && JSON.parse(json);
         }
@@ -42,8 +40,6 @@ var Realtime = (function () {
             console.log(e);
             return false;
         }
-    };
-    return Realtime;
-}());
+    }
+}
 exports.Realtime = Realtime;
-//# sourceMappingURL=Realtime.js.map

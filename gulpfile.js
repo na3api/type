@@ -1,6 +1,6 @@
 const elixir = require('laravel-elixir');
 // import the dependency
-var elixirTypscript = require('elixir-typescript');
+require('laravel-elixir-typescript');
 
 /*
  |--------------------------------------------------------------------------
@@ -15,7 +15,7 @@ var elixirTypscript = require('elixir-typescript');
 
 elixir(mix => {
     mix.sass('app.scss')
-        .typescript('app.ts')
+        .webpack('app.ts', 'public/js/app.js', "resources/assets/typescript")
         .version([
             'css/app.css',
             'js/app.js'
